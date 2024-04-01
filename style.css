@@ -1,1 +1,59 @@
-/*# sourceMappingURL=style.css.map */
+@charset "UTF-8";
+/*----------------------------------------------------------------------------------------
+色に関するプロパティ
+----------------------------------------------------------------------------------------*/
+.sample {
+  position: relative;
+}
+.sample::before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  mask-image: url(images/arrow.svg);
+  -webkit-mask-image: url(images/arrow.svg);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: contain;
+  background-color: #000;
+}
+
+@media (min-width: 769px) {
+  .sample:hover::before {
+    background-color: #fff;
+    z-index: 10;
+  }
+}
+.sample::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: #333;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+.sample:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+.sample:hover span {
+  color: #fff;
+  z-index: 10;
+  position: relative;
+}
+
+/*----------------------------------------------------------------------------------------
+レスポンシブに関する汎用集
+----------------------------------------------------------------------------------------*/
+.sample {
+  line-height: 1.7142857143;
+}
+
+.sample {
+  height: 11.7035110533vw;
+  max-height: 98px;
+}/*# sourceMappingURL=style.css.map */
